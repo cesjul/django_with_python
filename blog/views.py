@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 
 def blog(request):
-    return HttpResponse('This tab has succefully opened!')
+    return render(request,
+                  'blog/home.html')
 
 def example(request):
-    return HttpResponse('This is a example of nested urls')
+    return render(request,
+                  'blog/example.html')
