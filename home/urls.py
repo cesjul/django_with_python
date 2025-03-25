@@ -1,15 +1,10 @@
 from django.urls import path
 from home import views as home_views
 
-
-# def home(request):
-#     return HttpResponse('This is the home page')
-
-# def my_view(request):
-#     return HttpResponse('This tab has succefully opened!')
+app_name = 'home'
 
 urlpatterns = [
-    path('', home_views.index),
+    path('', home_views.index, name='home'),
     
     
 ]
