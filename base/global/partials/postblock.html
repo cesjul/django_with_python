@@ -1,11 +1,14 @@
 <article class="post">
-    <header></header>
-    <h2 class="post__title">
-        {{ post.title}}
-    </h2>
+    <header>
+        <h2 class="post__title">
+            <a href="{% url "blog:post" post.id %}">
+                {{ post.title }}
+            </a>
+        </h2>
+    </header>
     <div>
         <p class="post__body">
-            {{ post.body}}
+            {{ post.body }}
         </p>
     </div>
 </article>

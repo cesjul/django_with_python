@@ -21,3 +21,14 @@ def example(request):
     return render(request,
                   'blog/example.html', context,
     )
+
+def post(request, id):
+
+    context =  {'text': 'On initial blog page',
+                'title': 'Blog - ',
+                'posts': posts,
+                }
+
+    return render(request,
+                  'blog/home.html',  context,
+    )
