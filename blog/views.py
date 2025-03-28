@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpRequest
+from django.http import HttpRequest, Http404
 from blog.data import posts
 from typing import Any
 
@@ -32,7 +32,8 @@ def post(request: HttpRequest, post_id: int):
             break
 
     if found_post == None:
-        raise Exception('Post not founded')
+       raise Http404('Not founded')
+        
 
     context =  {'text': 'On initial blog page',
                 'title': found_post['title'] + ' - ',
@@ -42,3 +43,6 @@ def post(request: HttpRequest, post_id: int):
     return render(request,
                   'blog/post.html',  context,
     )
+
+
+    
